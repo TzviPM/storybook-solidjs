@@ -4,7 +4,6 @@
   "type": "module",
   "workspaces": {
     "packages": [
-      "example",
       "packages/frameworks/*",
       "packages/renderers/*"
     ]
@@ -12,6 +11,7 @@
   "devDependencies": {
     "@eslint/js": "^9.13.0",
     "@fal-works/esbuild-plugin-global-externals": "^2.1.2",
+    "@types/bun": "^1.2.15",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^18.0.0",
     "esbuild": "^0.24.0",
@@ -40,15 +40,11 @@
     "vitest": "^2.1.4"
   },
   "scripts": {
-    "build": "yarn workspaces foreach --all -pt run build",
-    "check:all": "yarn run check:lint && yarn run check:test && yarn run check:format",
     "check:format": "prettier --check .",
     "check:lint": "eslint .",
     "check:test": "vitest run --no-isolate",
-    "fix:all": "yarn run fix:lint && yarn run fix:format",
     "fix:format": "prettier --write .",
     "fix:lint": "eslint . --fix",
     "test": "vitest"
-  },
-  "packageManager": "yarn@4.5.1"
+  }
 }

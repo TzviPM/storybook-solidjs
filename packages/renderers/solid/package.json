@@ -1,6 +1,6 @@
 {
-  "name": "storybook-solidjs",
-  "version": "1.0.0-beta.7",
+  "name": "@tzvipm.dev/storybook-solidjs",
+  "version": "0.0.2",
   "description": "Storybook SolidJS renderer",
   "keywords": [
     "storybook"
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybookjs/solidjs.git",
+    "url": "https://github.com/TzviPM/storybook-solidjs.git",
     "directory": "renderers/solid"
   },
   "funding": {
@@ -41,21 +41,24 @@
     "*.d.ts"
   ],
   "scripts": {
-    "prepack": "yarn build --optimized --reset",
-    "build": "npx jiti ../../../scripts/prepare/build.ts",
-    "check": "npx jiti ../../../scripts/prepare/check.ts"
+    "prepack": "bun run --bun tsup",
+    "build": "bun run --bun tsup",
+    "check": "bun run ../../../scripts/prepare/check.ts"
   },
   "dependencies": {
-    "@babel/standalone": "^7.26.2",
+    "@babel/standalone": "7.27.4",
     "@storybook/docs-tools": "next",
     "@storybook/global": "^5.0.0",
     "@storybook/preview-api": "next",
     "@storybook/types": "next",
-    "@types/babel__standalone": "link:.yarn/cache/null",
+    "@types/babel__standalone": "7.1.9",
     "async-mutex": "^0.5.0"
   },
   "devDependencies": {
-    "storybook": "next"
+    "esbuild-plugin-solid": "^0.6.0",
+    "storybook": "latest",
+    "terser": "^5.40.0",
+    "tsup": "^8.5.0"
   },
   "peerDependencies": {
     "@storybook/test": "*",
@@ -67,19 +70,7 @@
       "optional": true
     }
   },
-  "engines": {
-    "node": ">=18.0.0"
-  },
   "publishConfig": {
     "access": "public"
-  },
-  "bundler": {
-    "entries": [
-      "./src/index.ts",
-      "./src/preset.ts",
-      "./src/entry-preview.tsx",
-      "./src/entry-preview-docs.tsx"
-    ],
-    "platform": "browser"
   }
 }
