@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from 'storybook-solidjs';
+import type { Meta, StoryObj } from '@tzvipm.dev/storybook-solidjs';
 import { expect, userEvent, within } from '@storybook/test';
 
 import { Page } from './Page';
