@@ -34,21 +34,22 @@
     "sort-package-json": "^2.10.1",
     "ts-node": "^10.9.2",
     "tsup": "^8.4.0",
+    "tsx": "^4.20.3",
     "type-fest": "^4.35.0",
     "typescript": "5.7.3",
     "typescript-eslint": "^8.25.0",
     "vitest": "^2.1.4"
   },
   "scripts": {
-    "build": "yarn workspaces foreach --all -pt run build",
-    "check:all": "yarn run check:lint && yarn run check:test && yarn run check:format",
+    "build": "pnpm -r run build",
+    "check:all": "pnpm run check:lint && pnpm run check:test && pnpm run check:format",
     "check:format": "prettier --check .",
     "check:lint": "eslint .",
     "check:test": "vitest run --no-isolate",
-    "fix:all": "yarn run fix:lint && yarn run fix:format",
+    "fix:all": "pnpm run fix:lint && pnpm run fix:format",
     "fix:format": "prettier --write .",
     "fix:lint": "eslint . --fix",
     "test": "vitest"
   },
-  "packageManager": "yarn@4.5.1"
+  "packageManager": "pnpm@10.12.4+sha512.5ea8b0deed94ed68691c9bad4c955492705c5eeb8a87ef86bc62c74a26b037b08ff9570f108b2e4dbd1dd1a9186fea925e527f141c648e85af45631074680184"
 }

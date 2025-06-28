@@ -1,0 +1,7 @@
+packages:
+  - 'packages/frameworks/*'
+  - 'packages/renderers/*'
+  - 'example'
+
+onlyBuiltDependencies:
+  - esbuild

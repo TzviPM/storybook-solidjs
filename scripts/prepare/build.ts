@@ -1,10 +1,14 @@
 import { writeFile } from 'node:fs/promises';
 import { dirname, join, parse, posix, relative, resolve, sep } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 import type { Metafile } from 'esbuild';
 import aliasPlugin from 'esbuild-plugin-alias';
 import { solidPlugin } from 'esbuild-plugin-solid';
-import * as fs from 'fs-extra';
+import fs from 'fs-extra';
 import { fdir } from 'fdir';
 import slash from 'slash';
 import { dedent } from 'ts-dedent';
@@ -12,7 +16,7 @@ import { build, Format, type Options } from 'tsup';
 import type { PackageJson } from 'type-fest';
 
 import { exec } from '../utils/exec';
-import * as esbuild from 'esbuild';
+import esbuild from 'esbuild';
 
 /* TYPES */
 
@@ -54,7 +58,7 @@ const run = async ({ cwd, flags }: { cwd: string; flags: string[] }) => {
   )) as PackageJsonWithBundlerConfig;
 
   if (pre) {
-    await exec(`jiti ${pre}`, { cwd });
+    await exec(`tsx ${pre}`, { cwd });
   }
 
   if (!name) throw 'No package name found!';
@@ -197,7 +201,7 @@ const run = async ({ cwd, flags }: { cwd: string; flags: string[] }) => {
   );
 
   if (post) {
-    await exec(`jiti ${post}`, { cwd }, { debug: true });
+    await exec(`tsx ${post}`, { cwd }, { debug: true });
   }
 
   if (process.env.CI !== 'true') {
