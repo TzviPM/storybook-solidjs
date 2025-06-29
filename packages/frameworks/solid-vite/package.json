@@ -1,6 +1,6 @@
 {
-  "name": "storybook-solidjs-vite",
-  "version": "1.0.0-beta.7",
+  "name": "@tzvipm.dev/storybook-solidjs-vite",
+  "version": "0.1.0",
   "description": "Storybook for SolidJS and Vite: Develop SolidJS in isolation with Hot Reloading.",
   "keywords": [
     "storybook"
@@ -49,14 +49,13 @@
     "check": "tsx ../../../scripts/prepare/check.ts"
   },
   "dependencies": {
-    "@storybook/builder-vite": "next",
-    "@storybook/types": "next",
+    "@storybook/builder-vite": "latest",
     "magic-string": "^0.30.11",
-    "storybook-solidjs": "workspace:*"
+    "@tzvipm.dev/storybook-solidjs": "workspace:*"
   },
   "devDependencies": {
     "solid-js": "~1.9.0",
-    "storybook": "next",
+    "storybook": "latest",
     "vite": "^4.0.0 || ^5.0.0 || ^6.0.0"
   },
   "peerDependencies": {

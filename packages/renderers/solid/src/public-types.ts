@@ -11,12 +11,12 @@ import type {
   StoryAnnotations,
   StoryContext as GenericStoryContext,
   StrictArgs,
-} from '@storybook/types';
+} from 'storybook/internal/types';
 import type { ComponentProps, Component as ComponentType } from 'solid-js';
 import type { SetOptional, Simplify } from 'type-fest';
 import type { SolidRenderer } from './types';
 
-export type { Args, ArgTypes, Parameters, StrictArgs } from '@storybook/types';
+export type { Args, ArgTypes, Parameters, StrictArgs } from 'storybook/internal/types';
 export type { SolidRenderer };
 
 /**

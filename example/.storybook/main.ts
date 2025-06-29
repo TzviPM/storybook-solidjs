@@ -1,4 +1,4 @@
-import type { StorybookConfig } from 'storybook-solidjs-vite';
+import type { StorybookConfig } from '@tzvipm.dev/storybook-solidjs-vite';
 
 import { join, dirname } from 'path';
 
@@ -13,12 +13,11 @@ const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
     getAbsolutePath('@storybook/addon-links'),
-    getAbsolutePath('@storybook/addon-essentials'),
     getAbsolutePath('@chromatic-com/storybook'),
-    getAbsolutePath('@storybook/addon-interactions'),
+    getAbsolutePath("@storybook/addon-docs")
   ],
   framework: {
-    name: getAbsolutePath('storybook-solidjs-vite'),
+    name: getAbsolutePath('@tzvipm.dev/storybook-solidjs-vite'),
     options: {},
   },
 };

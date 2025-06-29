@@ -3,10 +3,10 @@
 import {
   enhanceArgTypes,
   extractComponentDescription,
-} from '@storybook/docs-tools';
+} from 'storybook/internal/docs-tools';
 import { sourceDecorator } from './docs/sourceDecorator';
 import type { Decorator, SolidRenderer } from './public-types';
-import { ArgTypesEnhancer } from '@storybook/types';
+import { ArgTypesEnhancer } from 'storybook/internal/types';
 
 export const parameters = {
   docs: {

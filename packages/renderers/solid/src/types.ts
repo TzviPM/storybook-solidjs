@@ -1,8 +1,8 @@
 import type { Component, JSXElement } from 'solid-js';
-import type { Args, WebRenderer } from '@storybook/types';
+import type { Args, WebRenderer } from 'storybook/internal/types';
 
-export type { RenderContext } from '@storybook/types';
-export type { StoryContext } from '@storybook/types';
+export type { RenderContext } from 'storybook/internal/types';
+export type { StoryContext } from 'storybook/internal/types';
 
 export interface SolidRenderer extends WebRenderer {
   // @ts-expect-error Component expects a record, but TArgs are unknown.

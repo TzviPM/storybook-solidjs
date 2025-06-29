@@ -1,6 +1,6 @@
 {
-  "name": "storybook-solidjs",
-  "version": "1.0.0-beta.7",
+  "name": "@tzvipm.dev/storybook-solidjs",
+  "version": "0.1.0",
   "description": "Storybook SolidJS renderer",
   "keywords": [
     "storybook"
@@ -47,25 +47,15 @@
   },
   "dependencies": {
     "@babel/standalone": "^7.26.2",
-    "@storybook/docs-tools": "next",
     "@storybook/global": "^5.0.0",
-    "@storybook/preview-api": "next",
-    "@storybook/types": "next",
-    "@types/babel__standalone": "link:.yarn/cache/null",
     "async-mutex": "^0.5.0"
   },
   "devDependencies": {
-    "storybook": "next"
+    "storybook": "latest"
   },
   "peerDependencies": {
-    "@storybook/test": "*",
     "solid-js": "~1.9.0",
     "storybook": "*"
-  },
-  "peerDependenciesMeta": {
-    "@storybook/test": {
-      "optional": true
-    }
   },
   "engines": {
     "node": ">=18.0.0"

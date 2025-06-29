@@ -1,4 +1,4 @@
-import { ArgsStoryFn } from '@storybook/types';
+import { ArgsStoryFn } from 'storybook/internal/types';
 import { SolidRenderer } from './types';
 
 /**

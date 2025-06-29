@@ -10,10 +10,15 @@
     ]
   },
   "devDependencies": {
+    "@changesets/cli": "^2.29.5",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
     "@eslint/js": "^9.13.0",
     "@fal-works/esbuild-plugin-global-externals": "^2.1.2",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^18.0.0",
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
     "esbuild": "^0.24.0",
     "esbuild-plugin-alias": "^0.2.1",
     "esbuild-plugin-solid": "^0.6.0",
@@ -23,6 +28,7 @@
     "fdir": "^6.4.2",
     "fs-extra": "^11.2.0",
     "globals": "^15.11.0",
+    "husky": "^9.1.7",
     "jiti": "^2.3.3",
     "picomatch": "^4.0.2",
     "prettier": "^3.3.3",
@@ -49,7 +55,17 @@
     "fix:all": "pnpm run fix:lint && pnpm run fix:format",
     "fix:format": "prettier --write .",
     "fix:lint": "eslint . --fix",
-    "test": "vitest"
+    "test": "vitest",
+    "commit": "cz",
+    "prepare": "husky",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "pnpm build && changeset publish"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
   "packageManager": "pnpm@10.12.4+sha512.5ea8b0deed94ed68691c9bad4c955492705c5eeb8a87ef86bc62c74a26b037b08ff9570f108b2e4dbd1dd1a9186fea925e527f141c648e85af45631074680184"
 }

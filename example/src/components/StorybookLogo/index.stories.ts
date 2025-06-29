@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from 'storybook-solidjs';
+import type { Meta, StoryObj } from '@tzvipm.dev/storybook-solidjs';
 import { StorybookLogo } from '.';
 
 const meta: Meta<typeof StorybookLogo> = {

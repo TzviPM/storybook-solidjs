@@ -3,7 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "storybook-solidjs": ["./src"]
+      "@tzvipm.dev/storybook-solidjs": ["./src"]
     }
   },
   "include": ["src/**/*", "template/**/*"]

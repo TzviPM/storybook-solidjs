@@ -1,10 +1,10 @@
-import type { StorybookConfig as StorybookConfigBase } from '@storybook/types';
+import type { StorybookConfig as StorybookConfigBase } from 'storybook/internal/types';
 import type {
   StorybookConfigVite,
   BuilderOptions,
 } from '@storybook/builder-vite';
 
-type FrameworkName = 'storybook-solidjs-vite';
+type FrameworkName = '@tzvipm.dev/storybook-solidjs-vite';
 type BuilderName = '@storybook/builder-vite';
 
 export type FrameworkOptions = {

@@ -3,7 +3,7 @@ import { ErrorBoundary, onMount } from 'solid-js';
 import { createStore } from 'solid-js/store';
 import { render as solidRender } from 'solid-js/web';
 import { Semaphore } from 'async-mutex';
-import type { RenderContext } from '@storybook/types';
+import type { RenderContext } from 'storybook/internal/types';
 import type { ComponentsData, SolidRenderer, StoryContext } from './types';
 import { Decorator } from './public-types';
 

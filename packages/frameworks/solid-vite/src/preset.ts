@@ -9,7 +9,7 @@ import { dirname, join } from 'node:path';
  */
 
 import { hasVitePlugins } from '@storybook/builder-vite';
-import type { PresetProperty } from '@storybook/types';
+import type { PresetProperty } from 'storybook/internal/types';
 //import { solidDocgen } from './plugins/solid-docgen';
 import type { StorybookConfig } from './types';
 
@@ -24,7 +24,7 @@ const getAbsolutePath = <I extends string>(input: I): I =>
  */
 export const core: PresetProperty<'core', StorybookConfig> = {
   builder: getAbsolutePath('@storybook/builder-vite'),
-  renderer: getAbsolutePath('storybook-solidjs'),
+  renderer: getAbsolutePath('@tzvipm.dev/storybook-solidjs'),
 };
 
 /**

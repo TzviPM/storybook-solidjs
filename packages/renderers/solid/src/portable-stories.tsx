@@ -2,11 +2,11 @@
 import {
   setProjectAnnotations as originalSetProjectAnnotations,
   setDefaultProjectAnnotations,
-} from '@storybook/preview-api';
+} from 'storybook/preview-api';
 import type {
   NamedOrDefaultProjectAnnotations,
   NormalizedProjectAnnotations,
-} from '@storybook/types';
+} from 'storybook/internal/types';
 import type { SolidRenderer } from './types';
 
 import * as INTERNAL_DEFAULT_PROJECT_ANNOTATIONS from './entry-preview';
@@ -22,7 +22,7 @@ import * as INTERNAL_DEFAULT_PROJECT_ANNOTATIONS from './entry-preview';
  *
  * ```jsx
  * // setup-file.js
- * import { setProjectAnnotations } from 'storybook-solidjs';
+ * import { setProjectAnnotations } from '@tzvipm.dev/storybook-solidjs';
  * import projectAnnotations from './.storybook/preview';
  *
  * setProjectAnnotations(projectAnnotations);

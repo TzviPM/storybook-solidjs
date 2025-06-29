@@ -3,11 +3,11 @@
 // @babel/standalone does not export types,
 // so this file is a mess of anys.
 
-import type { StoryContext, PartialStoryFn } from '@storybook/types';
+import type { StoryContext, PartialStoryFn } from 'storybook/internal/types';
 import { SolidRenderer } from '../types';
 
-import { SNIPPET_RENDERED, SourceType } from '@storybook/docs-tools';
-import { addons, useEffect } from '@storybook/preview-api';
+import { SNIPPET_RENDERED, SourceType } from 'storybook/internal/docs-tools';
+import { addons, useEffect } from 'storybook/preview-api';
 
 // @ts-expect-error Types are not up to date
 import * as Babel from '@babel/standalone';

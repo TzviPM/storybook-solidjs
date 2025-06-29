@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from 'storybook-solidjs';
+import type { Meta, StoryObj } from '@tzvipm.dev/storybook-solidjs';
 
-import { fn } from '@storybook/test';
+import { fn } from 'storybook/test';
 
 import { Link } from '.';
 

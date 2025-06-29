@@ -8,7 +8,7 @@
 
 import { join } from 'node:path';
 
-import type { PresetProperty } from '@storybook/types';
+import type { PresetProperty } from 'storybook/internal/types';
 
 /**
  * Add additional scripts to run in the story preview.
