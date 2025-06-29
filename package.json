@@ -48,6 +48,7 @@
   },
   "scripts": {
     "build": "pnpm -r run build",
+    "check": "./self_check.sh",
     "check:all": "pnpm run check:lint && pnpm run check:test && pnpm run check:format",
     "check:format": "prettier --check .",
     "check:lint": "eslint .",
