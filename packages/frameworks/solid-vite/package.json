@@ -1,6 +1,6 @@
 {
   "name": "@tzvipm.dev/storybook-solidjs-vite",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Storybook for SolidJS and Vite: Develop SolidJS in isolation with Hot Reloading.",
   "keywords": [
     "storybook"
