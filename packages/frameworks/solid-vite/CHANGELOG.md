@@ -1,5 +1,12 @@
 # @tzvipm.dev/storybook-solidjs-vite
 
+## 1.0.1
+
+### Patch Changes
+
+- Updated dependencies [d0ae5d0]
+  - @tzvipm.dev/storybook-solidjs@1.0.1
+
 ## 1.0.0
 
 ### Major Changes
