@@ -44,7 +44,7 @@
     "*.d.ts"
   ],
   "scripts": {
-    "prepack": "yarn build",
+    "prepack": "pnpm build",
     "build": "vite build && tsc --emitDeclarationOnly --declaration --outDir dist",
     "check": "tsc --noEmit"
   },
