@@ -1,6 +1,6 @@
 ---
-"@tzvipm.dev/storybook-solidjs": patch
-"@tzvipm.dev/storybook-solidjs-vite": patch
+'@tzvipm.dev/storybook-solidjs': patch
+'@tzvipm.dev/storybook-solidjs-vite': patch
 ---
 
 docs: Update documentation to reflect Storybook 9 package structure changes
