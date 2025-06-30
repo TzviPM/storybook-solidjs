@@ -14,7 +14,7 @@ export default [
       ],
     },
   },
-  { ignores: ['**/dist/'] },
+  { ignores: ['**/dist/', '**/preset.js', '**/storybook-static/'] },
   { files: ['**/*.{ts,tsx}'] },
   { languageOptions: { globals: { ...globals.browser, ...globals.node } } },
   depend.configs['flat/recommended'],

@@ -42,8 +42,8 @@
   ],
   "scripts": {
     "prepack": "yarn build --optimized --reset",
-    "build": "tsx ../../../scripts/prepare/build.ts",
-    "check": "tsx ../../../scripts/prepare/check.ts"
+    "build": "vite build && tsc -p tsconfig.build.json",
+    "check": "tsc --noEmit"
   },
   "dependencies": {
     "@babel/standalone": "^7.26.2",
@@ -51,7 +51,10 @@
     "async-mutex": "^0.5.0"
   },
   "devDependencies": {
-    "storybook": "latest"
+    "storybook": "latest",
+    "vite": "^6.0.0",
+    "vite-plugin-solid": "^2.10.0",
+    "typescript": "^5.0.0"
   },
   "peerDependencies": {
     "solid-js": "~1.9.0",

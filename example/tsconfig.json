@@ -4,8 +4,11 @@
     "baseUrl": ".",
     "paths": {
       "@tzvipm.dev/storybook-solidjs": ["../packages/renderers/solid"],
-      "@tzvipm.dev/storybook-solidjs-vite": ["../packages/frameworks/solid-vite"]
+      "@tzvipm.dev/storybook-solidjs-vite": [
+        "../packages/frameworks/solid-vite"
+      ]
     },
     "types": ["vite/client"]
-  }
+  },
+  "include": ["src", ".storybook"]
 }

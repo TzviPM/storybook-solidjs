@@ -14,7 +14,7 @@ const config: StorybookConfig = {
   addons: [
     getAbsolutePath('@storybook/addon-links'),
     getAbsolutePath('@chromatic-com/storybook'),
-    getAbsolutePath("@storybook/addon-docs")
+    getAbsolutePath('@storybook/addon-docs'),
   ],
   framework: {
     name: getAbsolutePath('@tzvipm.dev/storybook-solidjs-vite'),
