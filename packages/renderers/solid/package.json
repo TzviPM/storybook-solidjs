@@ -42,7 +42,7 @@
   ],
   "scripts": {
     "prepack": "yarn build --optimized --reset",
-    "build": "vite build && tsc src/preset.ts --outDir dist --declaration && tsc --emitDeclarationOnly --declaration --outDir dist",
+    "build": "vite build && tsc -p tsconfig.build.json",
     "check": "tsc --noEmit"
   },
   "dependencies": {

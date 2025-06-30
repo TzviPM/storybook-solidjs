@@ -51,16 +51,25 @@ export const viteFinal: StorybookConfig['viteFinal'] = async (config) => {
       ...(config.optimizeDeps?.include || []),
       'solid-js',
       'solid-js/web',
-      'solid-js/store'
+      'solid-js/store',
     ],
-    exclude: [
-      ...(config.optimizeDeps?.exclude || []),
-      '@storybook/blocks'
-    ]
+    exclude: [...(config.optimizeDeps?.exclude || []), '@storybook/blocks'],
   };
 
-  // Disable esbuild JSX transformation - let vite-plugin-solid handle it
-  config.esbuild = false;
+  // Configure esbuild to handle TypeScript but let vite-plugin-solid handle JSX
+  config.esbuild = {
+    // Let vite-plugin-solid handle JSX transformation
+    jsx: 'preserve',
+    // But still allow TypeScript
+    loader: 'tsx',
+    target: 'es2015',
+    tsconfigRaw: {
+      compilerOptions: {
+        // Ensure we don't transform JSX
+        jsx: 'preserve',
+      },
+    },
+  };
 
   return config;
 };

@@ -9,5 +9,6 @@
       ]
     },
     "types": ["vite/client"]
-  }
+  },
+  "include": ["src", ".storybook"]
 }

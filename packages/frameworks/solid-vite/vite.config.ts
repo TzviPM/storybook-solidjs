@@ -4,12 +4,15 @@ import { readdirSync } from 'fs';
 
 // Get all TypeScript entry points
 const entries = readdirSync(resolve(__dirname, 'src'))
-  .filter(file => file.endsWith('.ts'))
-  .reduce((acc, file) => {
-    const name = file.replace(/\.ts$/, '');
-    acc[name] = resolve(__dirname, 'src', file);
-    return acc;
-  }, {} as Record<string, string>);
+  .filter((file) => file.endsWith('.ts'))
+  .reduce(
+    (acc, file) => {
+      const name = file.replace(/\.ts$/, '');
+      acc[name] = resolve(__dirname, 'src', file);
+      return acc;
+    },
+    {} as Record<string, string>,
+  );
 
 export default defineConfig({
   build: {
@@ -19,7 +22,7 @@ export default defineConfig({
       fileName: (format, entryName) => {
         const ext = format === 'es' ? 'mjs' : 'js';
         return `${entryName}.${ext}`;
-      }
+      },
     },
     rollupOptions: {
       external: [
@@ -28,12 +31,12 @@ export default defineConfig({
         '@storybook/builder-vite',
         '@tzvipm.dev/storybook-solidjs',
         'vite-plugin-solid',
-        'node:path'
-      ]
+        'node:path',
+      ],
     },
     outDir: 'dist',
     emptyOutDir: true,
     sourcemap: false,
-    minify: false
-  }
+    minify: false,
+  },
 });

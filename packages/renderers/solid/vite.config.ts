@@ -5,12 +5,18 @@ import { readdirSync } from 'fs';
 
 // Get browser entry points (exclude preset.ts which is Node-only)
 const entries = readdirSync(resolve(__dirname, 'src'))
-  .filter(file => (file.endsWith('.ts') || file.endsWith('.tsx')) && file !== 'preset.ts')
-  .reduce((acc, file) => {
-    const name = file.replace(/\.(ts|tsx)$/, '');
-    acc[name] = resolve(__dirname, 'src', file);
-    return acc;
-  }, {} as Record<string, string>);
+  .filter(
+    (file) =>
+      (file.endsWith('.ts') || file.endsWith('.tsx')) && file !== 'preset.ts',
+  )
+  .reduce(
+    (acc, file) => {
+      const name = file.replace(/\.(ts|tsx)$/, '');
+      acc[name] = resolve(__dirname, 'src', file);
+      return acc;
+    },
+    {} as Record<string, string>,
+  );
 
 export default defineConfig({
   plugins: [
@@ -18,8 +24,8 @@ export default defineConfig({
       solid: {
         generate: 'dom',
         hydratable: false,
-      }
-    })
+      },
+    }),
   ],
   build: {
     lib: {
@@ -28,7 +34,7 @@ export default defineConfig({
       fileName: (format, entryName) => {
         const ext = format === 'es' ? 'mjs' : 'js';
         return `${entryName}.${ext}`;
-      }
+      },
     },
     rollupOptions: {
       external: [
@@ -40,22 +46,22 @@ export default defineConfig({
         '@storybook/global',
         'async-mutex',
         '@babel/standalone',
-        'node:path'
+        'node:path',
       ],
       output: {
         globals: {
           'solid-js': 'SolidJS',
           'solid-js/web': 'SolidJSWeb',
-          'solid-js/store': 'SolidJSStore'
-        }
-      }
+          'solid-js/store': 'SolidJSStore',
+        },
+      },
     },
     outDir: 'dist',
     emptyOutDir: true,
     sourcemap: false,
-    minify: false
+    minify: false,
   },
   resolve: {
     conditions: ['module'],
-  }
+  },
 });
