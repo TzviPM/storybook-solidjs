@@ -10,18 +10,18 @@ runs:
       run: corepack enable && corepack install
     - name: Print versions
       shell: bash
-      run: node --version && yarn --version
-    - name: Get yarn cache directory path
-      id: yarn-cache-dir-path
+      run: node --version && pnpm --version
+    - name: Get pnpm store directory path
+      id: pnpm-cache-dir-path
       shell: bash
-      run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+      run: echo "dir=$(pnpm store path)" >> $GITHUB_OUTPUT
     - uses: actions/cache@v4
-      id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+      id: pnpm-cache # use this to check for `cache-hit` (`steps.pnpm-cache.outputs.cache-hit != 'true'`)
       with:
-        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        path: ${{ steps.pnpm-cache-dir-path.outputs.dir }}
+        key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
         restore-keys: |
-          ${{ runner.os }}-yarn-
+          ${{ runner.os }}-pnpm-
     - name: Install project dependencies
       shell: bash
-      run: yarn install
+      run: pnpm install

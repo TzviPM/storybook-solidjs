@@ -30,14 +30,14 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
       - name: Check bundling
-        run: yarn check
+        run: pnpm check
         working-directory: packages/renderers/solid
       - name: Publish to NPM
         if: github.event_name == 'release' || inputs.publish
-        run: yarn npm publish
+        run: pnpm publish
         working-directory: packages/renderers/solid
         env:
-          YARN_NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
   solid-vite-workflow:
     needs: solid-workflow
     uses: ./.github/workflows/solid-vite.yml
