@@ -1,6 +1,6 @@
 {
   "name": "@tzvipm.dev/storybook-solidjs",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Storybook SolidJS renderer",
   "keywords": [
     "storybook"
