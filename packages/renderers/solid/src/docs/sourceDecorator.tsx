@@ -11,9 +11,9 @@ import { addons, useEffect } from 'storybook/preview-api';
 
 // @ts-expect-error Types are not up to date
 import * as Babel from '@babel/standalone';
-const parser = Babel.packages.parser;
-const generate = Babel.packages.generator.default;
-const t = Babel.packages.types;
+const parser = Babel.packages?.parser || Babel.parser;
+const generate = Babel.packages?.generator?.default || Babel.generator?.default;
+const t = Babel.packages?.types || Babel.types;
 
 function skipSourceRender(context: StoryContext<SolidRenderer>): boolean {
   const sourceParams = context?.parameters.docs?.source;

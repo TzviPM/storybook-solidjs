@@ -44,5 +44,23 @@ export const viteFinal: StorybookConfig['viteFinal'] = async (config) => {
     // plugins.unshift(solidDocgen());
   }
 
+  // Configure optimizeDeps for SolidJS
+  config.optimizeDeps = {
+    ...config.optimizeDeps,
+    include: [
+      ...(config.optimizeDeps?.include || []),
+      'solid-js',
+      'solid-js/web',
+      'solid-js/store'
+    ],
+    exclude: [
+      ...(config.optimizeDeps?.exclude || []),
+      '@storybook/blocks'
+    ]
+  };
+
+  // Disable esbuild JSX transformation - let vite-plugin-solid handle it
+  config.esbuild = false;
+
   return config;
 };

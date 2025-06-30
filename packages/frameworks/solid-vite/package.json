@@ -44,9 +44,9 @@
     "*.d.ts"
   ],
   "scripts": {
-    "prepack": "yarn build --optimized --reset",
-    "build": "tsx ../../../scripts/prepare/build.ts",
-    "check": "tsx ../../../scripts/prepare/check.ts"
+    "prepack": "yarn build",
+    "build": "vite build && tsc --emitDeclarationOnly --declaration --outDir dist",
+    "check": "tsc --noEmit"
   },
   "dependencies": {
     "@storybook/builder-vite": "latest",
@@ -56,6 +56,7 @@
   "devDependencies": {
     "solid-js": "~1.9.0",
     "storybook": "latest",
+    "typescript": "^5.0.0",
     "vite": "^4.0.0 || ^5.0.0 || ^6.0.0"
   },
   "peerDependencies": {
